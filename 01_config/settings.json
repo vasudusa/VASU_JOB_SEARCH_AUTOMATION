@@ -1,0 +1,261 @@
+{
+  "system": {
+    "name": "Vasu Job Search Automation",
+    "phase": "Phase 1",
+    "mode": "DRY_RUN",
+    "external_job_sites_enabled": false,
+    "browser_automation_enabled": false,
+    "auto_apply_enabled": false,
+    "real_credentials_allowed": false,
+    "real_submission_allowed": false
+  },
+  "application_modes": {
+    "default": "DRY_RUN",
+    "allowed": ["DRY_RUN", "HUMAN_APPROVAL", "AUTO_APPLY"],
+    "auto_apply_enabled_by_default": false,
+    "phase1_forced_mode": "DRY_RUN"
+  },
+  "user_approved_application_config": {
+    "source_id": "user_approved_config_2026_10_07",
+    "approved_at": "2026-10-07",
+    "scope": "Explicit user-approved configuration for application settings. This does not mutate 02_profile/truth_store.json.",
+    "personal": {
+      "current_location": "Mumbai, Maharashtra, India",
+      "notice_period_days": 90,
+      "notice_period_label": "90 days"
+    },
+    "compensation_strategy": {
+      "india": {
+        "target_annual_inr": 1500000,
+        "target_label": "INR 15 LPA+",
+        "hard_rejection_threshold": false,
+        "guidance": "Treat compensation as one scoring factor. Do not automatically reject Indian roles below INR 15 LPA when strategic value is strong."
+      },
+      "international": {
+        "do_not_convert_india_target_to_foreign_currency": true,
+        "guidance": "Evaluate international roles using local market compensation, seniority, company quality, relocation value, sponsorship, cost-of-living context where available, international career value, and future progression. Recommend rather than automatically reject borderline international opportunities.",
+        "evaluation_factors": [
+          "local market compensation",
+          "role seniority",
+          "company quality",
+          "relocation value",
+          "sponsorship",
+          "cost-of-living considerations where data is available",
+          "international career value",
+          "future progression"
+        ]
+      },
+      "strategic_salary_exception": {
+        "enabled": true,
+        "label": "STRATEGIC SALARY EXCEPTION",
+        "trigger_when": "An India role is below the INR 15 LPA target but may still deserve GOOD or STRONG consideration because strategic value is high.",
+        "justification_factors": [
+          "strong global company/brand",
+          "significant international exposure",
+          "international mobility potential",
+          "strong technical environment",
+          "senior/leadership scope",
+          "clear progression toward Senior Manager / Program Manager / Director",
+          "strong technology transformation exposure",
+          "enterprise-scale projects",
+          "strong product/company reputation",
+          "valuable industry transition",
+          "exceptional learning/career acceleration",
+          "remote/flexible working arrangement",
+          "strong future compensation potential"
+        ]
+      }
+    },
+    "work_authorization": {
+      "india": "Authorized / Citizen",
+      "foreign": "Not currently authorized",
+      "sponsorship_required_opportunities": "Yes, consider and clearly flag sponsorship requirements."
+    },
+    "work_style_preferences": {
+      "relocation": true,
+      "remote": true,
+      "hybrid": true,
+      "on_site": true,
+      "international_opportunities": true,
+      "sponsorship_required_opportunities": true
+    },
+    "professional_claim_rules": {
+      "pmp": "Not yet certified. Never represent PMP as completed or obtained.",
+      "direct_people_management": "No formal direct-report people-management experience should currently be claimed.",
+      "technical_leadership": true,
+      "project_team_coordination": true,
+      "hrms_experience": true,
+      "sap_functional_expertise": false,
+      "nsci_go_live_completed": false,
+      "preserve_technical_coordination_vs_ownership": true
+    },
+    "career_strategy_priority_order": [
+      "maximum income",
+      "company/brand reputation",
+      "international exposure",
+      "career progression",
+      "remote/flexible lifestyle",
+      "technical/strategic breadth"
+    ],
+    "strategy_guidance": "Apply strategic judgment rather than rigid numerical filtering. A strong brand and career opportunity may justify temporarily accepting lower compensation."
+  },
+  "thresholds": {
+    "strong": 85,
+    "good": 70,
+    "stretch": 55,
+    "human_approval_threshold": 70,
+    "auto_apply_threshold": 95,
+    "daily_application_limit": 0
+  },
+  "scoring_weights": {
+    "role_alignment": 25,
+    "technical_project_alignment": 20,
+    "seniority": 15,
+    "compensation_potential": 15,
+    "company_brand_quality": 10,
+    "international_exposure": 5,
+    "career_progression": 5,
+    "location_workstyle_fit": 5
+  },
+  "target_roles": {
+    "priority_1": [
+      "Senior Technical Project Manager",
+      "Technical Project Manager"
+    ],
+    "priority_2": [
+      "Delivery Manager",
+      "Enterprise Implementation Lead",
+      "Project Manager Technology",
+      "Implementation Manager"
+    ],
+    "priority_3": [
+      "Technical Program Manager",
+      "Program Manager"
+    ]
+  },
+  "target_countries": [
+    "India",
+    "UAE",
+    "Singapore",
+    "UK",
+    "Germany",
+    "Luxembourg",
+    "Australia",
+    "USA",
+    "Remote Worldwide"
+  ],
+  "work_modes": ["Remote", "Hybrid", "On-site", "Relocation"],
+  "resume_variants": {
+    "master_senior_tpm": {
+      "label": "Master Senior Technical Project Manager Resume",
+      "path": "03_resumes/Master_Senior_Technical_Project_Manager_Resume.pdf",
+      "required": true
+    },
+    "technical_project_manager": {
+      "label": "Technical Project Manager Resume",
+      "path": "03_resumes/Technical_Project_Manager_Resume.pdf",
+      "required": false
+    },
+    "product_program": {
+      "label": "Product Program Resume",
+      "path": "03_resumes/Product_Program_Resume.pdf",
+      "required": false
+    },
+    "international_implementation": {
+      "label": "International Implementation Resume",
+      "path": "03_resumes/International_Implementation_Resume.pdf",
+      "required": false
+    }
+  },
+  "reject_rules": {
+    "junior_title_terms": [
+      "junior",
+      "project coordinator",
+      "pmo support",
+      "assistant project manager",
+      "associate project manager"
+    ],
+    "low_fit_role_terms": [
+      "support executive",
+      "application support",
+      "functional executive",
+      "hrms support"
+    ],
+    "specialist_domains": [
+      {
+        "domain": "SAP",
+        "domain_terms": ["sap", "successfactors", "s/4hana", "hana"],
+        "specialist_context_terms": ["functional", "consultant", "certification", "certified", "module", "fi", "co", "mm", "sd", "hcm", "expert"]
+      },
+      {
+        "domain": "ServiceNow",
+        "domain_terms": ["servicenow"],
+        "specialist_context_terms": ["developer", "admin", "administrator", "implementation specialist", "certified", "expert"]
+      },
+      {
+        "domain": "Workday",
+        "domain_terms": ["workday"],
+        "specialist_context_terms": ["hcm consultant", "integration consultant", "certified", "functional", "configuration expert"]
+      },
+      {
+        "domain": "Oracle",
+        "domain_terms": ["oracle"],
+        "specialist_context_terms": ["fusion", "ebs", "functional", "technical consultant", "certified", "expert"]
+      },
+      {
+        "domain": "Salesforce",
+        "domain_terms": ["salesforce"],
+        "specialist_context_terms": ["developer", "administrator", "architect", "certified", "apex", "lightning"]
+      },
+      {
+        "domain": "Cybersecurity",
+        "domain_terms": ["cybersecurity", "soc analyst", "penetration testing", "vapt engineer"],
+        "specialist_context_terms": ["hands-on", "incident response", "siem", "security engineer", "ethical hacking"]
+      },
+      {
+        "domain": "Data Science",
+        "domain_terms": ["data scientist", "machine learning", "ml engineer", "ai engineer", "data science"],
+        "specialist_context_terms": ["hands-on", "model development", "python modeling", "ml algorithms", "deep learning"]
+      },
+      {
+        "domain": "Software Engineering",
+        "domain_terms": ["software engineer", "full stack developer", "backend developer", "frontend developer"],
+        "specialist_context_terms": ["hands-on coding", "individual contributor", "production code", "developer"]
+      }
+    ]
+  },
+  "alignment_keywords": [
+    "technical project management",
+    "project management",
+    "delivery management",
+    "implementation",
+    "enterprise implementation",
+    "saas",
+    "hrms",
+    "payroll",
+    "integration",
+    "api",
+    "sql",
+    "stakeholder",
+    "client delivery",
+    "governance",
+    "risk",
+    "issue",
+    "escalation",
+    "training",
+    "rollout",
+    "migration",
+    "enterprise applications"
+  ],
+  "screening_questions": [
+    "What is your current location?",
+    "What is your notice period?",
+    "Are you PMP certified?",
+    "Do you require work authorization sponsorship?",
+    "What are your salary expectations?",
+    "Describe your SAP experience.",
+    "Has the NSCI project gone live?",
+    "Describe your people-management experience.",
+    "Describe your technical integration ownership."
+  ]
+}

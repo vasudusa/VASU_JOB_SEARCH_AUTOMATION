@@ -1,0 +1,305 @@
+{
+  "metadata": {
+    "owner": "Vasu Dusa",
+    "created_for": "Phase 1 dry-run job search system",
+    "truth_status_values": ["SUPPORTED", "PARTIAL", "UNKNOWN", "UNSUPPORTED"],
+    "policy": "Do not infer missing facts. Every generated answer must trace to approved facts and evidence sources."
+  },
+  "sources": [
+    {
+      "id": "phase1_request_profile",
+      "type": "pasted_profile_requirement",
+      "path": "C:/Users/Vasu Dusa/.codex/attachments/88caeade-e1c7-4635-a562-5f05d0994681/Pasted text.txt",
+      "status": "AVAILABLE",
+      "approved_for_phase1": true,
+      "notes": "Approved career profile and system constraints supplied in the Phase 1 request."
+    },
+    {
+      "id": "pm_workflow_context",
+      "type": "pasted_workflow_context",
+      "path": "C:/Users/Vasu Dusa/.codex/attachments/bf109324-d82b-48d2-b8a2-bf3bb7388909/pasted-text.txt",
+      "status": "AVAILABLE",
+      "approved_for_phase1": true,
+      "notes": "Prior verified description of Spine implementation workflow and PM responsibilities."
+    },
+    {
+      "id": "approved_master_resume",
+      "type": "master_resume",
+      "path": "03_resumes/Master_Senior_Technical_Project_Manager_Resume.pdf",
+      "status": "MISSING",
+      "approved_for_phase1": false,
+      "notes": "Approved Master Resume file was requested but not found in accessible folders. Add the approved resume before using resume-backed facts."
+    }
+  ],
+  "facts": [
+    {
+      "id": "identity.name",
+      "status": "SUPPORTED",
+      "claim": "Candidate name is Vasu Dusa.",
+      "value": "Vasu Dusa",
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "My name is Vasu Dusa.",
+      "forbidden_statements": []
+    },
+    {
+      "id": "profile.current_role",
+      "status": "SUPPORTED",
+      "claim": "Current role is Project Manager at Spine Technologies India Private Limited.",
+      "value": {
+        "role": "Project Manager",
+        "company": "Spine Technologies India Private Limited"
+      },
+      "evidence_sources": ["phase1_request_profile", "pm_workflow_context"],
+      "allowed_statement": "I am currently a Project Manager at Spine Technologies India Private Limited.",
+      "forbidden_statements": ["Do not claim a director-level title.", "Do not claim to manage all PMs."]
+    },
+    {
+      "id": "profile.location",
+      "status": "SUPPORTED",
+      "claim": "Location is Mumbai, India.",
+      "value": "Mumbai, India",
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "I am based in Mumbai, India.",
+      "forbidden_statements": []
+    },
+    {
+      "id": "profile.it_experience",
+      "status": "SUPPORTED",
+      "claim": "Approximate IT experience is about 12 years.",
+      "value": "~12 years",
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "I have approximately 12 years of IT experience.",
+      "forbidden_statements": ["Do not state an exact number unless confirmed by the approved resume."]
+    },
+    {
+      "id": "profile.career_progression",
+      "status": "SUPPORTED",
+      "claim": "Career progression includes desktop and network support, software development, business analysis, application management, product/implementation, project management, and technical/client delivery leadership.",
+      "value": [
+        "Desktop and Network Support",
+        "Software Development",
+        "Business Analysis",
+        "Application Management",
+        "Product/Implementation",
+        "Project Management",
+        "Technical/client delivery leadership"
+      ],
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "My background spans support, software development, business analysis, application management, implementation, project management, and technical/client delivery leadership.",
+      "forbidden_statements": ["Do not convert this into specialist ownership of every listed domain."]
+    },
+    {
+      "id": "profile.technical_background",
+      "status": "SUPPORTED",
+      "claim": "Technical background includes .NET, C#, Python, SQL, REST APIs, enterprise applications, deployment, server configuration, integrations, troubleshooting, business analysis, Agile/Scrum, stakeholder management, governance, and implementation management.",
+      "value": [
+        ".NET",
+        "C#",
+        "Python",
+        "SQL",
+        "REST APIs",
+        "Enterprise applications",
+        "Application deployment",
+        "Server configuration",
+        "Integrations",
+        "Technical troubleshooting",
+        "Business analysis",
+        "Agile/Scrum",
+        "Stakeholder management",
+        "Project governance",
+        "Implementation management"
+      ],
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "My technical background includes .NET, C#, Python, SQL, REST APIs, enterprise applications, deployment, server configuration, integrations, and troubleshooting, alongside business analysis, Agile/Scrum, stakeholder management, governance, and implementation management.",
+      "forbidden_statements": ["Do not claim expert-level depth unless a source explicitly supports it."]
+    },
+    {
+      "id": "profile.pm_responsibilities",
+      "status": "SUPPORTED",
+      "claim": "Current PM responsibilities include enterprise HRMS/payroll implementations, client-facing governance, planning, implementation coordination, stakeholder management, escalation management, recovery of stalled projects, technical integration coordination, attendance API integrations, SQL/mediator-table coordination, Tally/JV integrations, SAP-related requirements coordination only, training coordination, SOPs, trackers, review meetings, risk/issue management, and delivery closure.",
+      "value": [
+        "Enterprise HRMS/payroll implementations",
+        "Client-facing project governance",
+        "Project planning",
+        "Implementation coordination",
+        "Stakeholder management",
+        "Escalation management",
+        "Recovery of stalled projects",
+        "Technical integration coordination",
+        "Attendance API integrations",
+        "SQL/mediator-table coordination",
+        "Tally/JV integrations",
+        "SAP-related requirements coordination only",
+        "Training coordination",
+        "SOPs",
+        "Trackers",
+        "Review meetings",
+        "Risk/issue management",
+        "Delivery closure"
+      ],
+      "evidence_sources": ["phase1_request_profile", "pm_workflow_context"],
+      "allowed_statement": "My current responsibilities include enterprise HRMS/payroll implementations, client-facing governance, planning, implementation coordination, stakeholder management, escalation management, recovery of stalled projects, technical integration coordination, training coordination, SOPs, trackers, risk/issue management, and delivery closure.",
+      "forbidden_statements": ["Do not claim SAP functional expertise.", "Do not claim sole technical ownership where only coordination is supported."]
+    },
+    {
+      "id": "project.bright_brothers",
+      "status": "SUPPORTED",
+      "claim": "Bright Brothers involved 520 employees, 8 locations, biometric attendance, network/static-IP dependencies, third-party scheduling, SQL/mediator tables, multiple stakeholders, troubleshooting, and escalation processes.",
+      "value": {
+        "employees": 520,
+        "locations": 8,
+        "themes": ["multi-location delivery", "technical implementation", "integration coordination", "stakeholder management", "escalation management"]
+      },
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Bright Brothers is a supported example of multi-location enterprise implementation, attendance/integration coordination, stakeholder management, and escalation handling.",
+      "forbidden_statements": []
+    },
+    {
+      "id": "project.nsci_status",
+      "status": "SUPPORTED",
+      "claim": "NSCI implementation had been stalled for approximately 3 years; Vasu helped assess, align management and Union stakeholders, drive acceptance of revised structures, progress attendance integration, policy configuration, and training. Go-Live was still pending at the latest known point.",
+      "value": {
+        "stalled_duration": "approximately 3 years",
+        "go_live_status": "pending at latest known point"
+      },
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "For NSCI, I helped assess and progress a long-stalled implementation, including stakeholder alignment, attendance integration progress, policy configuration, and training coordination; Go-Live was still pending at the latest known point.",
+      "forbidden_statements": ["Do not state that NSCI Go-Live was completed unless new evidence is added."]
+    },
+    {
+      "id": "project.navio",
+      "status": "SUPPORTED",
+      "claim": "Navio involved security/audit escalations, technical investigation, stakeholder communication, ISO certifications, SOC 1/SOC 2, and VAPT documentation.",
+      "value": ["security/audit escalations", "technical investigation", "stakeholder communication", "ISO certifications", "SOC 1/SOC 2", "VAPT documentation"],
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Navio is a supported example of security/audit escalation handling, technical investigation coordination, stakeholder communication, and documentation around ISO, SOC, and VAPT items.",
+      "forbidden_statements": ["Do not claim cybersecurity specialist ownership."]
+    },
+    {
+      "id": "project.mpcl",
+      "status": "SUPPORTED",
+      "claim": "MPCL involved Tally integration, SQL connectivity, salary-data posting, JV requirements, and coordination between Finance/Accounts, Tally, and technical teams.",
+      "value": ["Tally integration", "SQL connectivity", "salary-data posting", "JV requirements", "cross-team coordination"],
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "MPCL is a supported example of Tally/JV integration coordination, SQL connectivity coordination, and cross-functional delivery with Finance, Accounts, Tally, and technical teams.",
+      "forbidden_statements": []
+    },
+    {
+      "id": "project.carnival",
+      "status": "SUPPORTED",
+      "claim": "Carnival involved application specialist work, enterprise HR platform ownership, outsourced development coordination, vendor management, pain-point analysis, a 3-year technology roadmap, and coordination with the UK Main Carnival team.",
+      "value": ["application specialist", "enterprise HR platform", "outsourced development coordination", "vendor management", "pain-point analysis", "3-year technology roadmap", "UK Main Carnival coordination"],
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Carnival is a supported example of enterprise HR platform/application ownership, outsourced development coordination, vendor management, process analysis, roadmap work, and coordination with the UK Main Carnival team.",
+      "forbidden_statements": ["Do not attribute the Carnival 3-year roadmap to the Spine HRMS product."]
+    },
+    {
+      "id": "preference.relocation",
+      "status": "SUPPORTED",
+      "claim": "Vasu is open to relocation, remote, hybrid, on-site, international roles, sponsorship-required roles, and night shifts when opportunity is strong.",
+      "value": {
+        "remote": true,
+        "hybrid": true,
+        "onsite": true,
+        "relocation": true,
+        "international": true,
+        "sponsorship_required_roles": true,
+        "night_shifts_for_strong_opportunity": true
+      },
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "I am open to remote, hybrid, on-site, relocation, international roles, sponsorship-required opportunities, and night shifts if the opportunity is strong.",
+      "forbidden_statements": ["Do not claim legal work authorization from this preference alone."]
+    },
+    {
+      "id": "capability.sap_related_coordination",
+      "status": "PARTIAL",
+      "claim": "SAP-related requirements and coordination are supported, but SAP functional expertise is not supported.",
+      "value": "SAP-related requirements/coordination only",
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "I can discuss SAP-related requirements coordination where it intersects with project delivery, but I should not be positioned as an SAP functional expert.",
+      "forbidden_statements": ["Do not claim SAP functional consultant experience.", "Do not claim SAP module expertise.", "Do not claim SAP certification."]
+    },
+    {
+      "id": "capability.technical_coordination_vs_ownership",
+      "status": "PARTIAL",
+      "claim": "Technical integration coordination is supported; sole technical ownership of all integrations is not supported.",
+      "value": "coordination supported, sole ownership not verified",
+      "evidence_sources": ["phase1_request_profile", "pm_workflow_context"],
+      "allowed_statement": "My verified experience supports technical integration coordination, troubleshooting, and stakeholder/vendor coordination.",
+      "forbidden_statements": ["Do not claim sole engineering ownership of every integration unless resume evidence is added."]
+    },
+    {
+      "id": "credential.pmp",
+      "status": "UNSUPPORTED",
+      "claim": "No approved evidence confirms PMP certification.",
+      "value": null,
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Do not claim PMP certification unless new approved evidence is added.",
+      "forbidden_statements": ["Do not claim PMP certified."]
+    },
+    {
+      "id": "capability.sap_functional_expertise",
+      "status": "UNSUPPORTED",
+      "claim": "SAP functional expertise is not supported.",
+      "value": null,
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Do not claim SAP functional expertise.",
+      "forbidden_statements": ["SAP functional expert", "SAP functional consultant", "SAP module expert"]
+    },
+    {
+      "id": "project.nsci_go_live_completed",
+      "status": "UNSUPPORTED",
+      "claim": "NSCI Go-Live completion is not supported.",
+      "value": false,
+      "evidence_sources": ["phase1_request_profile"],
+      "allowed_statement": "Do not claim NSCI Go-Live was completed.",
+      "forbidden_statements": ["NSCI Go-Live completed", "NSCI went live"]
+    },
+    {
+      "id": "credential.certifications",
+      "status": "UNKNOWN",
+      "claim": "Certifications are not fully verified.",
+      "value": null,
+      "evidence_sources": ["approved_master_resume"],
+      "allowed_statement": "",
+      "forbidden_statements": ["Do not invent certifications."]
+    },
+    {
+      "id": "profile.people_management",
+      "status": "UNKNOWN",
+      "claim": "Direct people-management or direct-report ownership is not verified.",
+      "value": null,
+      "evidence_sources": ["approved_master_resume"],
+      "allowed_statement": "",
+      "forbidden_statements": ["Do not invent people-management experience.", "Do not claim direct reports without evidence."]
+    },
+    {
+      "id": "profile.work_authorization",
+      "status": "UNKNOWN",
+      "claim": "Work authorization status is unknown.",
+      "value": null,
+      "evidence_sources": ["approved_master_resume"],
+      "allowed_statement": "",
+      "forbidden_statements": ["Do not invent work authorization.", "Do not claim unauthorized eligibility."]
+    },
+    {
+      "id": "profile.notice_period",
+      "status": "UNKNOWN",
+      "claim": "Notice period is unknown.",
+      "value": null,
+      "evidence_sources": ["approved_master_resume"],
+      "allowed_statement": "",
+      "forbidden_statements": ["Do not guess notice period."]
+    },
+    {
+      "id": "profile.salary_expectations",
+      "status": "UNKNOWN",
+      "claim": "Salary expectations are unknown and must be configured by role/country/currency.",
+      "value": null,
+      "evidence_sources": ["approved_master_resume"],
+      "allowed_statement": "",
+      "forbidden_statements": ["Do not invent salary expectations.", "Do not invent salary history."]
+    }
+  ]
+}
+
