@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.mypy_cache/
+05_database/*.sqlite
+05_database/*.sqlite-*
+06_reports/*.md
+08_logs/*.jsonl
+09_exports/*
+!09_exports/.gitkeep
+

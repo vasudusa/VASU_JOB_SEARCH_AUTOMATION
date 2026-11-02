@@ -1,0 +1,13 @@
+[project]
+name = "vasu-job-search-automation"
+version = "0.1.0"
+description = "Phase 1 local dry-run job search and application preparation system for Vasu Dusa."
+requires-python = ">=3.11"
+dependencies = []
+
+[tool.vasu_phase1]
+mode = "DRY_RUN"
+external_job_sites_enabled = false
+browser_automation_enabled = false
+auto_apply_enabled = false
+
